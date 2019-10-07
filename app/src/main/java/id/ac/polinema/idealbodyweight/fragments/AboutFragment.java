@@ -20,26 +20,30 @@ import id.ac.polinema.idealbodyweight.R;
 public class AboutFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
     private static final String ARG_NAME = "name";
-    private String name;
-    private AboutFragment aboutFragment;
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private String name;
 
+
+    public AboutFragment() {
+        // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param name Parameter 1.
+     * @return A new instance of fragment AboutFragment.
+     */
+    // TODO: Rename and change types and number of parameters
     public static AboutFragment newInstance(String name) {
         AboutFragment fragment = new AboutFragment();
         Bundle args = new Bundle();
         args.putString(ARG_NAME, name);
         fragment.setArguments(args);
         return fragment;
-    }
-
-    public AboutFragment() {
-        // Required empty public constructor
     }
 
     @Override
@@ -55,19 +59,9 @@ public class AboutFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_about, container, false);
-        TextView nameText = view.findViewById(R.id.text_name);
-        nameText.setText(name);
+        TextView nameTeks = view.findViewById(R.id.text_Name);
+        nameTeks.setText(name);
         return view;
-    }
-
-    // TODO: Rename and change types and number of parameters
-    public static AboutFragment newInstance(String param1, String param2) {
-        AboutFragment fragment = new AboutFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
 }
